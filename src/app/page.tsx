@@ -4,18 +4,18 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default async function Home() {
-  const url = await fetch("https://jsonplaceholder.typicode.com/albums");
-  const albums = await url.json();
+  const path = await fetch("https://jsonplaceholder.typicode.com/albums");
+  const albumData = await path.json();
 
   return (
     <main className="p-6 bg-yellow-500 min-h-screen">
-      <h1 className="text-4xl font-bold text-center  ">Kiran Ahmed</h1>
-      <h1 className="text-4xl font-bold text-center  ">SIR ALI JAWWAD</h1>
+      <h1 className="pt-4 text-6xl font-bold text-center  ">Faizan Ahmed</h1><br />
       <h1 className="text-4xl font-bold text-center text-gray-800 mb-8">
+        
         Album Collection
       </h1>
       <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-        {albums.map((album: any) => (
+        {albumData.map((album: any) => (
           <div
             key={album.id}
             className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 p-4"
